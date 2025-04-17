@@ -1,0 +1,36 @@
+/*p.cp{background-color:green; color:red;}
+body{
+/*background:url("IPL IMAGE1.jpg") no-repeat; }
+p{ background-color:rgba(119,171,89,0.7);
+border:2px dashed red;}*/
+/*#mk { display:block;list-style:none;}*/
+/*#mk{ list-style-position:inside; display:block;}*/
+li:hover{color:green;}
+/*#mk2{display:none;}
+#sp2{display:block;}*/
+#tb1 {border-collapse:collapse; width:80%;}
+#tb1{width:50%; border:2px solid grey;border-collapse:collapse;}
+#tb1 td{text-align:center;}
+#tb1 th{background-color:green; color:white;}
+#tb1 tr:nth-child(even){background-color:pink;}
+#tb1 tr:nth-child(odd){background-color:red;}
+#tb1 tr:hover{background-color:cyan;}
+#home li{display:inline; padding:10px; list-style-none:none;}
+#home {background-color:black;color:white;height:30px;padding-top:5px;padding-left:400px;}
+#home a{text-decoration:none; color:white;}
+#home a:hover{color:aqua; background-color:black;}
+/*#meet { display:flex;
+background-color: black;
+padding:10px;
+justify-content:space-between;
+}
+#meet div{
+background-color:grey;}*/
+#meet{
+display:grid;
+grid-template-columns:auto auto auto auto;
+column-gap:20px;
+row-gap:10px;
+background-color:black;}
+#meet div{background-color:grey;
+padding:10px;}

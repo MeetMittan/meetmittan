@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="https://d3pm6qrawttss1.cloudfront.net/p/assets/all_24da73974f50c4d27d83cf904811af27.css" type="text/css">
+<script type="text/javascript">
+var Globals = {"s3_url":"https:\/\/d3pm6qrawttss1.cloudfront.net\/","SupportedContentTypes":["image\/gif","image\/x-png","application\/jpg","image\/png","image\/pjpeg","application\/png","image\/x-bmp","image\/x-windows-bmp","image\/jpg","image\/bmp","image\/x-tiff","application\/gif","image\/tiff","application\/jpeg","image\/jpeg"],"SupportedExtensions":[".bmp",".gif",".jpeg",".png",".tiff"],"targetOrigin":"*","assets":{"worker":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/m\/PixWorker.min_5499c083fd3d72de5982a7a1b64aae3d.js","view":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/view_a719c187a7408a49ab3dcad9e0411568.svg","dotdotdot":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/dotdotdot_ddfa2f6f4c4b24aec3ba07a8cc14f5b7.svg","down_caret":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/down-caret_ed14191394537cb2f3a1f61d9fe6d6b8.svg","download":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/download_7bb9d59a202d3c2cc0b8dd2792dc7314.svg","download_dark":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/download-dark_a8c7a53f540f3a48a2b5ad01b3d52391.svg","graphics_small":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/graphics-small_f8926d107b0669a543c8df8b67d704e2.svg","photo_small":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/photo-small_d6e84ff7a5fe42ac0112c07fd423004b.svg","wildcat_jpeged":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/wildcat-jpeged_738eed4bd57d6ed40da9546c780ee32b.png","wildcat_smoothed":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/wildcat-smoothed_566f210d586d4f5e3fd45c31490c258a.png","wildcat_input":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/wildcat-input_b5bad0ce3d2e02c16212b07dc872412c.jpg","remove":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/remove_dfd7b3c2828d590fd9e21d08d9739398.svg","remove_dark":"https:\/\/d3pm6qrawttss1.cloudfront.net\/p\/assets\/images\/remove-dark_52683a09aa071d4643501458d6180dfa.svg"},"isDev":false};
+</script>
+
+<script crossorigin="anonymous" defer src="https://d3pm6qrawttss1.cloudfront.net/p/assets/all_acb819dc72de81a218dbe2a65fe12c75.js" type="text/javascript"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pix Spy">
+<meta name="theme-color" content="#b3b3b3">
+<link sizes="180x180" rel="apple-touch-icon" href="https://d3pm6qrawttss1.cloudfront.net/p/assets/m/favicons/pixspy/apple-touch-icon-180_eee824f1d2866d6f6bb0c76ad600ee9e.png">
+<link sizes="32x32" rel="icon" href="https://d3pm6qrawttss1.cloudfront.net/p/assets/m/favicons/pixspy/favicon-32_7bbeccef1425cf1015f341e907b13269.png" type="image/png">
+<link sizes="any" rel="icon" href="https://d3pm6qrawttss1.cloudfront.net/p/assets/logos/logo-big-ps_aaf5aaca2ae03c6576b80ad5a2b684ef.svg" type="image/svg+xml">
+<link rel="manifest" href="data:application/manifest+json,%7B%22id%22%3A%22pixspy-en%22%2C%22name%22%3A%22Pix%20Spy%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fd3pm6qrawttss1.cloudfront.net%2Fp%2Fassets%2Fm%2Ffavicons%2Fpixspy%2Ffavicon-192_ef153c661a7dc3ba0edcfa403356426c.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fd3pm6qrawttss1.cloudfront.net%2Fp%2Fassets%2Fm%2Ffavicons%2Fpixspy%2Ffavicon-512_88d26f1fa74fadf869875efe359526f3.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fd3pm6qrawttss1.cloudfront.net%2Fp%2Fassets%2Fm%2Ffavicons%2Fpixspy%2Ffavicon-maskable-512_d7fddf40a8b028215709053dcf40b8fa.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22maskable%22%7D%5D%2C%22start_url%22%3A%22https%3A%2F%2Fpixspy.com%2F%22%2C%22background_color%22%3A%22%23b3b3b3%22%2C%22description%22%3A%22Enhanced%20Pixel%20Examination.%20Pix%20Spy%20is%20your%20handy%20image%20inspection%20multi-tool.%20Measure%2C%20Eye-drop%2C%20Crop%20and%20more.%20Completely%20free%20to%20use%20and%20ad-free.%20%22%2C%22display%22%3A%22minimal-ui%22%2C%22lang%22%3A%22en%22%2C%22theme_color%22%3A%22%23b3b3b3%22%7D">
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1558567-18', 'auto');
+ga('set', 'anonymizeIp', true); ga('send', 'pageview'); 
+</script>
+<script type="text/javascript">
+window.onerror=function(m,s,l,c,e){var n=encodeURIComponent;new Image().src='https://askgeo.com/jserrors/log?w=pixspy.com&u=&p=https%3A%2F%2Fpixspy.com%2F&m='+n(m)+'&s='+n(s)+'&l='+n(l)+'&c='+n(c)+'&e='+n(e)+'&ua='+n(navigator.userAgent);};
+</script>
+
+<script type="text/javascript">
+var GlobalsEx = {"email":null,"LocaleParameter":"lc=en-US"};
+var I18nPhrases = {"DOWNLOAD":"DOWNLOAD","Pasted something that wasn't an image?":"Pasted something that wasn't an image?","{0}, {1}, {2} × {3} px ({4})":"{0}, {1}, {2} × {3} px ({4})","VIEW":"VIEW","Updating...":"Updating...","{0,number,integer} {0,plural,one{pixel}other{pixels}}":"{0,number,integer} {0,plural,one{pixel}other{pixels}}","opaque":"opaque","right click and drag...":"right click and drag...","Clean up on PixFix.com":"Clean up on PixFix.com","Fix Pixels":"Fix Pixels","has transparency":"has transparency","Terribly sorry, but your browser appears to be missing key feature(s) required to use this website:":"Terribly sorry, but your browser appears to be missing key feature(s) required to use this website:","{0,number,integer} {0,plural,one{color}other{colors}}":"{0,number,integer} {0,plural,one{color}other{colors}}","{0,number,integer} {0,plural,one{megapixel}other{megapixels}}":"{0,number,integer} {0,plural,one{megapixel}other{megapixels}}","Unsupported Browser":"Unsupported Browser","{0}":"{0}","Add Custom Formatter":"Add Custom Formatter","Dropped a non-file input":"Dropped a non-file input","Trace to SVG on VectorMagic.com":"Trace to SVG on VectorMagic.com","Create face sticker on Pixian.AI":"Create face sticker on Pixian.AI","{0}, {1}, {2} x {3} px ({4})":"{0}, {1}, {2} x {3} px ({4})","Remove the background on Pixian.AI":"Remove the background on Pixian.AI","{0} {0,plural,one{pixel}other{pixels}}":"{0} {0,plural,one{pixel}other{pixels}}","Trace to SVG on Vectorizer.AI":"Trace to SVG on Vectorizer.AI","REMOVE":"REMOVE","Please try the latest version of one of these browsers instead: <b>{0}, {1}, {2}<\/b>.":"Please try the latest version of one of these browsers instead: <b>{0}, {1}, {2}<\/b>.","{0}, {1}, {2} × {3} px ({4}), {5}, {6,number,integer} {6,plural,one{color}other{colors}}":"{0}, {1}, {2} × {3} px ({4}), {5}, {6,number,integer} {6,plural,one{color}other{colors}}","Remove the background on ClippingMagic.com":"Remove the background on ClippingMagic.com","Optimize on Recompressor.com":"Optimize on Recompressor.com","{0} {0,plural,one{megapixel}other{megapixels}}":"{0} {0,plural,one{megapixel}other{megapixels}}","{0}, {1}, {2} x {3} px ({4}), {5}, {6} unique colors":"{0}, {1}, {2} x {3} px ({4}), {5}, {6} unique colors","{0} colors":"{0} colors","{0} px, {1,number,integer} {1,plural,one{color}other{colors}}":"{0} px, {1,number,integer} {1,plural,one{color}other{colors}}","Compress Image":"Compress Image"};
+</script>
+<title>Image inspection multi-tool - Pix Spy</title>
+<meta name="description" content="Image Inspection Multi-Tool — 100% free — fully in-browser — measure, color-pick, compare, histogram, cross-sections, sample, redact, and more">
+<link hreflang="en" rel="alternate" href="https://pixspy.com/">
+<link hreflang="de" rel="alternate" href="https://de.pixspy.com/">
+<link hreflang="es" rel="alternate" href="https://es.pixspy.com/">
+<link hreflang="fr" rel="alternate" href="https://fr.pixspy.com/">
+<link hreflang="hi" rel="alternate" href="https://hi.pixspy.com/">
+<link hreflang="id" rel="alternate" href="https://id.pixspy.com/">
+<link hreflang="it" rel="alternate" href="https://it.pixspy.com/">
+<link hreflang="ja" rel="alternate" href="https://ja.pixspy.com/">
+<link hreflang="ko" rel="alternate" href="https://ko.pixspy.com/">
+<link hreflang="pl" rel="alternate" href="https://pl.pixspy.com/">
+<link hreflang="pt" rel="alternate" href="https://pt.pixspy.com/">
+<link hreflang="ru" rel="alternate" href="https://ru.pixspy.com/">
+<link hreflang="th" rel="alternate" href="https://th.pixspy.com/">
+<link hreflang="tr" rel="alternate" href="https://tr.pixspy.com/">
+<link hreflang="vi" rel="alternate" href="https://vi.pixspy.com/">
+<link hreflang="zh-Hans" rel="alternate" href="https://zh.pixspy.com/">
+<link hreflang="zh-Hant" rel="alternate" href="https://tw.pixspy.com/">
+<script type="text/javascript">
+var GlobalsShared = {"locale":"en-US","localeQueryParameter":"lc"};
+</script>
+<!-- pixspy-4f5193588aebe23f947feb8b5e421171b6b4b2f5-ff42a0954f053e827b7163f651afb7b4 -->
+</head>
+
+<body id="main">
+<div class="top_pitch_section top-section">
+<div class="YoNavbar-outer_container">
+<div class="YoNavbar-container container ">
+<div class="YoNavbar-language_bar">
+<li class="dropdown dropdown_auto">
+<a data-toggle="dropdown" style="text-decoration: none; height: 50px;" href="#" class="dropdown-toggle"><span class="speech_bubble"><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0D%0A%3Csvg%0D%0A%20%20%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%0D%0A%20%20%20xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22%0D%0A%20%20%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%0D%0A%20%20%20xmlns%3Asvg%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0D%0A%20%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0D%0A%20%20%20xmlns%3Asodipodi%3D%22http%3A%2F%2Fsodipodi.sourceforge.net%2FDTD%2Fsodipodi-0.dtd%22%0D%0A%20%20%20xmlns%3Ainkscape%3D%22http%3A%2F%2Fwww.inkscape.org%2Fnamespaces%2Finkscape%22%0D%0A%20%20%20viewBox%3D%220%200%2030%2030%22%0D%0A%20%20%20version%3D%221.1%22%0D%0A%20%20%20id%3D%22svg12%22%0D%0A%20%20%20sodipodi%3Adocname%3D%22language-picker-globe.svg%22%0D%0A%20%20%20width%3D%2230%22%0D%0A%20%20%20height%3D%2230%22%0D%0A%20%20%20inkscape%3Aversion%3D%220.92.1%20r15371%22%3E%0D%0A%20%20%3Cmetadata%0D%0A%20%20%20%20%20id%3D%22metadata16%22%3E%0D%0A%20%20%20%20%3Crdf%3ARDF%3E%0D%0A%20%20%20%20%20%20%3Ccc%3AWork%0D%0A%20%20%20%20%20%20%20%20%20rdf%3Aabout%3D%22%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdc%3Atype%0D%0A%20%20%20%20%20%20%20%20%20%20%20rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%20%2F%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdc%3Atitle%3Elanuage-picker%3C%2Fdc%3Atitle%3E%0D%0A%20%20%20%20%20%20%3C%2Fcc%3AWork%3E%0D%0A%20%20%20%20%3C%2Frdf%3ARDF%3E%0D%0A%20%20%3C%2Fmetadata%3E%0D%0A%20%20%3Csodipodi%3Anamedview%0D%0A%20%20%20%20%20pagecolor%3D%22%23ffffff%22%0D%0A%20%20%20%20%20bordercolor%3D%22%23666666%22%0D%0A%20%20%20%20%20borderopacity%3D%221%22%0D%0A%20%20%20%20%20objecttolerance%3D%2210%22%0D%0A%20%20%20%20%20gridtolerance%3D%2210%22%0D%0A%20%20%20%20%20guidetolerance%3D%2210%22%0D%0A%20%20%20%20%20inkscape%3Apageopacity%3D%220%22%0D%0A%20%20%20%20%20inkscape%3Apageshadow%3D%222%22%0D%0A%20%20%20%20%20inkscape%3Awindow-width%3D%221483%22%0D%0A%20%20%20%20%20inkscape%3Awindow-height%3D%22800%22%0D%0A%20%20%20%20%20id%3D%22namedview14%22%0D%0A%20%20%20%20%20showgrid%3D%22false%22%0D%0A%20%20%20%20%20inkscape%3Azoom%3D%2218.394388%22%0D%0A%20%20%20%20%20inkscape%3Acx%3D%2213.432756%22%0D%0A%20%20%20%20%20inkscape%3Acy%3D%2217.592484%22%0D%0A%20%20%20%20%20inkscape%3Awindow-x%3D%224134%22%0D%0A%20%20%20%20%20inkscape%3Awindow-y%3D%22558%22%0D%0A%20%20%20%20%20inkscape%3Awindow-maximized%3D%220%22%0D%0A%20%20%20%20%20inkscape%3Acurrent-layer%3D%22svg12%22%20%2F%3E%0D%0A%20%20%3Cdefs%0D%0A%20%20%20%20%20id%3D%22defs4%22%3E%0D%0A%20%20%20%20%3Cstyle%0D%0A%20%20%20%20%20%20%20id%3D%22style2%22%3E.cls-1%7Bfill%3Ablue%3B%7D.cls-2%7Bfill%3A%23fff%3B%7D%3C%2Fstyle%3E%0D%0A%20%20%3C%2Fdefs%3E%0D%0A%20%20%3Ctitle%0D%0A%20%20%20%20%20id%3D%22title6%22%3Elanuage-picker%3C%2Ftitle%3E%0D%0A%20%20%3Cg%0D%0A%20%20%20%20%20data-name%3D%22Layer%201%22%0D%0A%20%20%20%20%20id%3D%22Layer_1-2%22%0D%0A%20%20%20%20%20style%3D%22fill%3A%23ffffff%3Bfill-opacity%3A1%22%0D%0A%20%20%20%20%20transform%3D%22matrix%281.4339807%2C0%2C0%2C1.4353008%2C-6.1081963%2C-0.9221766%29%22%3E%0D%0A%20%20%20%20%3Cpath%0D%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ffffff%3Bfill-opacity%3A1%22%0D%0A%20%20%20%20%20%20%20inkscape%3Aconnector-curvature%3D%220%22%0D%0A%20%20%20%20%20%20%20id%3D%22path8%22%0D%0A%20%20%20%20%20%20%20d%3D%22M%2016.77%2C4.17%20H%2016.7%20a%207.21%2C7.21%200%200%200%20-3.91%2C0%20h%20-0.07%20a%207.2%2C7.2%200%201%200%204%2C0%20z%20m%203.05%2C10.59%20A%2011.85%2C11.85%200%200%200%2018.4%2C14.28%2013.59%2C13.59%200%200%200%2018.78%2C11.51%20H%2021%20a%206.14%2C6.14%200%200%201%20-1.18%2C3.25%20z%20m%20-4.62%2C2.57%20v%20-2.65%20a%2014%2C14%200%200%201%202.06%2C0.23%2011.33%2C11.33%200%200%201%20-1%2C2.24%206.76%2C6.76%200%200%201%20-1.06%2C0.18%20z%20m%20-2%2C-0.18%20a%2013%2C13%200%200%201%20-0.95%2C-2.24%2014.25%2C14.25%200%200%201%202.07%2C-0.23%20v%202.65%20A%206.88%2C6.88%200%200%201%2013.18%2C17.15%20Z%20M%208.5%2C11.51%20h%202.24%20a%2013.59%2C13.59%200%200%200%200.38%2C2.77%2012.64%2C12.64%200%200%200%20-1.43%2C0.48%206.32%2C6.32%200%200%201%20-1.21%2C-3.25%20z%20M%209.67%2C7.37%20a%2012.64%2C12.64%200%200%200%201.43%2C0.48%2013.59%2C13.59%200%200%200%20-0.38%2C2.77%20H%208.48%20A%206.32%2C6.32%200%200%201%209.67%2C7.37%20Z%20M%2014.3%2C4.8%20v%202.65%20a%2014.25%2C14.25%200%200%201%20-2.07%2C-0.23%2012%2C12%200%200%201%201%2C-2.24%205.84%2C5.84%200%200%201%201.07%2C-0.18%20z%20m%202%2C0.18%20a%2011.33%2C11.33%200%200%201%201%2C2.24%2014%2C14%200%200%201%20-2.06%2C0.23%20V%204.8%20A%205.84%2C5.84%200%200%201%2016.31%2C5%20Z%20m%20-1.1%2C3.37%20a%2013.86%2C13.86%200%200%200%202.32%2C-0.27%2012.72%2C12.72%200%200%201%200.34%2C2.54%20H%2015.2%20Z%20m%20-0.9%2C0%20v%202.27%20H%2011.63%20A%2012%2C12%200%200%201%2012%2C8.08%2013.62%2C13.62%200%200%200%2014.3%2C8.35%20Z%20m%20-2.67%2C3.16%20h%202.67%20v%202.27%20A%2014.84%2C14.84%200%200%200%2012%2C14%2011.87%2C11.87%200%200%201%2011.63%2C11.51%20Z%20m%203.57%2C2.27%20v%20-2.27%20h%202.66%20a%2012.72%2C12.72%200%200%201%20-0.34%2C2.54%2013.86%2C13.86%200%200%200%20-2.32%2C-0.27%20z%20m%203.58%2C-3.16%20A%2013.59%2C13.59%200%200%200%2018.4%2C7.85%2011.85%2C11.85%200%200%200%2019.82%2C7.37%206.14%2C6.14%200%200%201%2021%2C10.62%20Z%20m%200.43%2C-4%20c%20-0.35%2C0.13%20-0.7%2C0.25%20-1.05%2C0.35%20a%2013.64%2C13.64%200%200%200%20-0.6%2C-1.54%206.25%2C6.25%200%200%201%201.65%2C1.21%20z%20M%2011.94%2C5.45%20A%2013.64%2C13.64%200%200%200%2011.34%2C7%20C%2010.98%2C6.9%2010.63%2C6.78%2010.28%2C6.65%20a%206.37%2C6.37%200%200%201%201.66%2C-1.2%20z%20m%20-1.66%2C10%20c%200.35%2C-0.13%200.7%2C-0.25%201.06%2C-0.35%20a%2015.8%2C15.8%200%200%200%200.59%2C1.54%206.49%2C6.49%200%200%201%20-1.65%2C-1.15%20z%20m%207.28%2C1.19%20a%2013.64%2C13.64%200%200%200%200.6%2C-1.54%20c%200.35%2C0.1%200.7%2C0.22%201.05%2C0.35%20a%206.49%2C6.49%200%200%201%20-1.65%2C1.23%20z%22%0D%0A%20%20%20%20%20%20%20class%3D%22cls-2%22%20%2F%3E%0D%0A%20%20%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="high" alt="Language Selection Icon"></span><span>&nbsp;&nbsp;English&nbsp;</span><span class="caret"></span></a>
+<ul class="dropdown-menu dropdown-menu-right modern_menu">
+<li class="active">
+<a href="https://pixspy.com/" class>English</a>
+</li>
+<li>
+<a href="https://de.pixspy.com/" class>Deutsch (German)</a>
+</li>
+<li>
+<a href="https://es.pixspy.com/" class>Español (Spanish)</a>
+</li>
+<li>
+<a href="https://fr.pixspy.com/" class>Français (French)</a>
+</li>
+<li>
+<a href="https://hi.pixspy.com/" class>हिन्दी (Hindi)</a>
+</li>
+<li>
+<a href="https://id.pixspy.com/" class>Indonesia (Indonesian)</a>
+</li>
+<li>
+<a href="https://it.pixspy.com/" class>Italiano (Italian)</a>
+</li>
+<li>
+<a href="https://ja.pixspy.com/" class>日本語 (Japanese)</a>
+</li>
+<li>
+<a href="https://ko.pixspy.com/" class>한국어 (Korean)</a>
+</li>
+<li>
+<a href="https://pl.pixspy.com/" class>Polski (Polish)</a>
+</li>
+<li>
+<a href="https://pt.pixspy.com/" class>Português (Portuguese)</a>
+</li>
+<li>
+<a href="https://ru.pixspy.com/" class>Русский (Russian)</a>
+</li>
+<li>
+<a href="https://th.pixspy.com/" class>ไทย (Thai)</a>
+</li>
+<li>
+<a href="https://tr.pixspy.com/" class>Türkçe (Turkish)</a>
+</li>
+<li>
+<a href="https://vi.pixspy.com/" class>Tiếng Việt (Vietnamese)</a>
+</li>
+<li>
+<a href="https://zh.pixspy.com/" class>简体中文 (Chinese)</a>
+</li>
+<li>
+<a href="https://tw.pixspy.com/" class>繁體中文 (Chinese)</a>
+</li>
+</ul>
+</li>
+</div>
+<div class="YoNavbar-table">
+<ul class="YoNavbar-navbar YoNavbar-left">
+<li style="padding-left: 5px;">
+<a href="/" class="YoNavbar-brand">
+<div class="svg-icon">
+<img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Ctitle%3Epix-spy-logo%3C%2Ftitle%3E%0D%0A%20%3Crect%20fill%3D%22%23202020%22%20width%3D%2216%22%20height%3D%2216%22%2F%3E%0D%0A%20%3Cg%20fill%3D%22%23fff%22%20fill-opacity%3D%220.7%22%3E%0D%0A%20%20%3Cpolygon%20points%3D%223%203%205%203%205%202%203%202%202%202%202%203%202%205%203%205%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%223%2014%205%2014%205%2013%203%2013%203%2011%202%2011%202%2013%202%2014%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%2213%205%2014%205%2014%203%2014%202%2013%202%2011%202%2011%203%2013%203%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%2214%2014%2014%2013%2014%2011%2013%2011%2013%2013%2011%2013%2011%2014%2013%2014%22%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%20%3Crect%20fill%3D%22%23fff%22%20x%3D%225%22%20y%3D%225%22%20width%3D%223%22%20height%3D%223%22%2F%3E%0D%0A%20%3Crect%20fill%3D%22%23fff%22%20x%3D%228%22%20y%3D%228%22%20width%3D%223%22%20height%3D%223%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Pix Spy Logo" decode="async" loading="lazy">
+</div>
+<span class="YoNavbar-logo_text">PIX SPY</span>
+</a>
+</li>
+</ul>
+<ul class="YoNavbar-navbar YoNavbar-middle_left">
+</ul>
+<ul class="YoNavbar-navbar YoNavbar-middle"></ul>
+<ul class="YoNavbar-navbar YoNavbar-middle_right">
+</ul>
+<ul class="YoNavbar-navbar YoNavbar-right">
+<li class="dropdown dropdown_auto">
+<a data-toggle="dropdown" style="text-decoration: none; height: 50px;" href="#" class="dropdown-toggle"><span class="speech_bubble"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2029.5%2025.66%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%20%3Cpath%20d%3D%22M21.85%200H7.64A7.64%207.64%200%200%200%200%207.64v7.06a7.65%207.65%200%200%200%207.64%207.65h5.48a1.65%201.65%200%200%201%201.42%202.51.52.52%200%200%200%20.7.73%2058.43%2058.43%200%200%201%206.61-3.24c4-1.43%207.65-3.43%207.65-7.65V7.64A7.65%207.65%200%200%200%2021.85%200z%22%20fill%3D%22%23202020%22%2F%3E%0D%0A%20%20%3Cpath%20d%3D%22M16.77%204.17h-.07a7.21%207.21%200%200%200-3.91%200h-.07a7.2%207.2%200%201%200%204%200zm3.05%2010.59a11.85%2011.85%200%200%200-1.42-.48%2013.59%2013.59%200%200%200%20.38-2.77H21a6.14%206.14%200%200%201-1.18%203.25zm-4.62%202.57v-2.65a14%2014%200%200%201%202.06.23%2011.33%2011.33%200%200%201-1%202.24%206.76%206.76%200%200%201-1.06.18zm-2-.18a13%2013%200%200%201-.95-2.24%2014.25%2014.25%200%200%201%202.07-.23v2.65a6.88%206.88%200%200%201-1.14-.18zm-4.7-5.64h2.24a13.59%2013.59%200%200%200%20.38%202.77%2012.64%2012.64%200%200%200-1.43.48%206.32%206.32%200%200%201-1.21-3.25zm1.17-4.14a12.64%2012.64%200%200%200%201.43.48%2013.59%2013.59%200%200%200-.38%202.77H8.48a6.32%206.32%200%200%201%201.19-3.25zM14.3%204.8v2.65a14.25%2014.25%200%200%201-2.07-.23%2012%2012%200%200%201%201-2.24%205.84%205.84%200%200%201%201.07-.18zm2%20.18a11.33%2011.33%200%200%201%201%202.24%2014%2014%200%200%201-2.06.23V4.8a5.84%205.84%200%200%201%201.07.2zm-1.1%203.37a13.86%2013.86%200%200%200%202.32-.27%2012.72%2012.72%200%200%201%20.34%202.54H15.2zm-.9%200v2.27h-2.67A12%2012%200%200%201%2012%208.08a13.62%2013.62%200%200%200%202.3.27zm-2.67%203.16h2.67v2.27A14.84%2014.84%200%200%200%2012%2014a11.87%2011.87%200%200%201-.37-2.49zm3.57%202.27v-2.27h2.66a12.72%2012.72%200%200%201-.34%202.54%2013.86%2013.86%200%200%200-2.32-.27zm3.58-3.16a13.59%2013.59%200%200%200-.38-2.77%2011.85%2011.85%200%200%200%201.42-.48A6.14%206.14%200%200%201%2021%2010.62zm.43-4c-.35.13-.7.25-1.05.35a13.64%2013.64%200%200%200-.6-1.54%206.25%206.25%200%200%201%201.65%201.21zm-7.27-1.17a13.64%2013.64%200%200%200-.6%201.55c-.36-.1-.71-.22-1.06-.35a6.37%206.37%200%200%201%201.66-1.2zm-1.66%2010c.35-.13.7-.25%201.06-.35a15.8%2015.8%200%200%200%20.59%201.54%206.49%206.49%200%200%201-1.65-1.15zm7.28%201.19a13.64%2013.64%200%200%200%20.6-1.54c.35.1.7.22%201.05.35a6.49%206.49%200%200%201-1.65%201.23z%22%20fill%3D%22%23fff%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="high" alt="Language Selection Icon"></span><span>&nbsp;&nbsp;English&nbsp;</span><span class="caret"></span></a>
+<ul class="dropdown-menu dropdown-menu-right modern_menu">
+<li class="active">
+<a href="https://pixspy.com/" class>English</a>
+</li>
+<li>
+<a href="https://de.pixspy.com/" class>Deutsch (German)</a>
+</li>
+<li>
+<a href="https://es.pixspy.com/" class>Español (Spanish)</a>
+</li>
+<li>
+<a href="https://fr.pixspy.com/" class>Français (French)</a>
+</li>
+<li>
+<a href="https://hi.pixspy.com/" class>हिन्दी (Hindi)</a>
+</li>
+<li>
+<a href="https://id.pixspy.com/" class>Indonesia (Indonesian)</a>
+</li>
+<li>
+<a href="https://it.pixspy.com/" class>Italiano (Italian)</a>
+</li>
+<li>
+<a href="https://ja.pixspy.com/" class>日本語 (Japanese)</a>
+</li>
+<li>
+<a href="https://ko.pixspy.com/" class>한국어 (Korean)</a>
+</li>
+<li>
+<a href="https://pl.pixspy.com/" class>Polski (Polish)</a>
+</li>
+<li>
+<a href="https://pt.pixspy.com/" class>Português (Portuguese)</a>
+</li>
+<li>
+<a href="https://ru.pixspy.com/" class>Русский (Russian)</a>
+</li>
+<li>
+<a href="https://th.pixspy.com/" class>ไทย (Thai)</a>
+</li>
+<li>
+<a href="https://tr.pixspy.com/" class>Türkçe (Turkish)</a>
+</li>
+<li>
+<a href="https://vi.pixspy.com/" class>Tiếng Việt (Vietnamese)</a>
+</li>
+<li>
+<a href="https://zh.pixspy.com/" class>简体中文 (Chinese)</a>
+</li>
+<li>
+<a href="https://tw.pixspy.com/" class>繁體中文 (Chinese)</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+
+<div class="FrontPage-topSection">
+<div class="row">
+<div class="col-lg-12">
+<header>
+<h1 class="FrontPage-main_title">Enhanced Pixel Examination</h1>
+<div class="FrontPage-subtitle_container">
+<p class="FrontPage-subtitle">
+Pix Spy is your handy image inspection multi-tool. 
+</p>
+<p class="FrontPage-subtitle">
+Measure, Eye-drop, Crop and more. 
+</p>
+<p class="dark_color FrontPage-subtitle_bold">
+Completely free to use. 
+</p>
+</div>
+</header>
+<label style="position: absolute; left: 0; top: 0; z-index: -10000;">
+<span style="color: transparent;">Paste Target</span>
+<input id="FileInput-PasteTarget">
+</label>
+
+<div class="popup_drop_target_container">
+<div class="popup_drop_target c">
+<span>DROP IMAGES HERE</span>
+</div>
+<div class="popup_drop_target_particles_container"></div>
+</div>
+<div id="app-starter-drop-zone">
+<div class="row hidden-xs">
+<div class="FileInput-click_to_upload app_starter c col-lg-12"><div class="drop_target"><div class="drop_target_text"><div class="img_files_container img_files_show_all"><div class="img_file"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2081.83%20110.59%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3CradialGradient%20id%3D%22paper-shadow-gradient%22%20cx%3D%2255.58%22%20cy%3D%2229.83%22%20r%3D%2235%22%20fx%3D%2280.58%22%20fy%3D%225.83%22%20gradientTransform%3D%22matrix%28.80002%20-.00067782%20.00076905%20.90769%2011.092%202.7912%29%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.2%22%20offset%3D%220%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.12%22%20offset%3D%22.19%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.06%22%20offset%3D%22.42%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.01%22%20offset%3D%22.68%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%220%22%20offset%3D%221%22%2F%3E%0D%0A%20%20%3C%2FradialGradient%3E%0D%0A%20%20%3ClinearGradient%20id%3D%22corner-shadow-gradient%22%20x1%3D%2261.737%22%20x2%3D%2273.471%22%20y1%3D%2224.742%22%20y2%3D%2212.467%22%20gradientTransform%3D%22scale%28.93808%201.066%29%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%220%22%20offset%3D%220%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.023593%22%20offset%3D%22.52%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.04%22%20offset%3D%22.7%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.07%22%20offset%3D%22.84%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.18%22%20offset%3D%22.94%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.25%22%20offset%3D%221%22%2F%3E%0D%0A%20%20%3C%2FlinearGradient%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3Epng-file%3C%2Ftitle%3E%0D%0A%20%3Cpath%20id%3D%22paper-white%22%20d%3D%22m81.73%2029.79-26.18-29.73h-42.55a13%2013%200%200%200-13%2012.94v84.63a13%2013%200%200%200%2013%2013h55.88a13%2013%200%200%200%2013-13z%22%20fill%3D%22%23fff%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22paper-shadow%22%20d%3D%22m81.73%2029.79-26.18-29.73h-42.55a13%2013%200%200%200-13%2012.94v84.63a13%2013%200%200%200%2013%2013h55.88a13%2013%200%200%200%2013-13z%22%20fill%3D%22url%28%23paper-shadow-gradient%29%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22corner-white%22%20d%3D%22m55.58%200%200.6%2022.13a6.09%206.09%200%200%200%206.09%206.08l19.56%201.62z%22%20fill%3D%22%23fff%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22corner-shadow%22%20d%3D%22m55.58%200%200.6%2022.13a6.09%206.09%200%200%200%206.09%206.08l19.56%201.62z%22%20fill%3D%22url%28%23corner-shadow-gradient%29%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22icon%22%20d%3D%22m%2016.57%2C60.7%20a%200.6%2C0.6%200%200%200%200.06%2C0.11%20l%200.06%2C0.1%200.1%2C0.09%20h%200.06%20l%2025.44%2C14.81%20h%200.05%20v%200%20a%200.56%2C0.56%200%200%200%200.44%2C0%20h%200.06%20v%200%20L%2065%2C62.57%20v%200%20a%200.28%2C0.28%200%200%200%200.1%2C-0.09%200.72%2C0.72%200%200%200%200.12%2C-0.21%20v%20-0.12%20c%200%2C0%200%2C-0.05%200%2C-0.08%20v%20-5.19%200%20a%200.57%2C0.57%200%200%200%200%2C-0.22%20c%200%2C0%200%2C0%200%2C0%20a%200.59%2C0.59%200%200%200%20-0.13%2C-0.18%20v%200%20L%2064.96%2C56.38%2039.57%2C41.56%20a%200.67%2C0.67%200%200%200%20-0.66%2C0%20L%2016.85%2C54.81%2016.73%2C54.9%20v%200%20a%200.57%2C0.57%200%200%200%20-0.12%2C0.18%20c%200%2C0%200%2C0%200%2C0%20a%200.8%2C0.8%200%200%200%200%2C0.21%20v%200%205.13%20c%200%2C0%200%2C0.06%200%2C0.08%20a%200.59%2C0.59%200%200%200%20-0.04%2C0.2%20z%20m%2011%2C-10.82%2012.92%2C-0.05%201.37%2C7.91%20-4.63%2C0.26%20a%200.32%2C0.32%200%200%200%200%2C0.64%20l%207.37%2C-0.43%201.68%2C7.72%20-23.1%2C-13.42%20z%20M%2064%2C58%20v%203.64%20L%2048%2C71.29%20V%2067.65%20Z%20M%2047.35%2C71.67%2043.26%2C74.13%20V%2070.49%20L%2047.35%2C68%20Z%20M%2042%2C70.5%20v%203.64%20l%20-24.15%2C-14%20v%20-3.66%20z%20m%20-2.75%2C-27.64%2024.17%2C14%20-16.07%2C9.67%20-0.27%2C-0.16%20-1.87%2C-8.56%20a%200.32%2C0.32%200%200%200%20-0.33%2C-0.25%20l%20-2.4%2C0.14%20-1.42%2C-8.25%20a%200.32%2C0.32%200%200%200%20-0.32%2C-0.27%20v%200%20l%20-12.11%2C0.06%20z%20m%20-16.7%2C10%2024.17%2C14%20-4.11%2C2.47%20-24.17%2C-14%20z%22%20fill%3D%22%23202020%22%2F%3E%0D%0A%20%3Ctext%20id%3D%22label%22%20transform%3D%22rotate%28-.12%29%22%20x%3D%2212.07291%22%20y%3D%2298.885506%22%20fill%3D%22%23202020%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212.27px%22%20font-weight%3D%22700%22%3E.jpg%3C%2Ftext%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="JPEG icon" decode="async" loading="lazy" class="file_card"></div><div class="img_file"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2081.83%20110.59%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3CradialGradient%20id%3D%22paper-shadow-gradient%22%20cx%3D%2255.58%22%20cy%3D%2229.83%22%20r%3D%2235%22%20fx%3D%2280.58%22%20fy%3D%225.83%22%20gradientTransform%3D%22matrix%28.80002%20-.00067782%20.00076905%20.90769%2011.092%202.7912%29%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.2%22%20offset%3D%220%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.12%22%20offset%3D%22.19%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.06%22%20offset%3D%22.42%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.01%22%20offset%3D%22.68%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%220%22%20offset%3D%221%22%2F%3E%0D%0A%20%20%3C%2FradialGradient%3E%0D%0A%20%20%3ClinearGradient%20id%3D%22corner-shadow-gradient%22%20x1%3D%2261.737%22%20x2%3D%2273.471%22%20y1%3D%2224.742%22%20y2%3D%2212.467%22%20gradientTransform%3D%22scale%28.93808%201.066%29%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%220%22%20offset%3D%220%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.023593%22%20offset%3D%22.52%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.04%22%20offset%3D%22.7%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.07%22%20offset%3D%22.84%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.18%22%20offset%3D%22.94%22%2F%3E%0D%0A%20%20%20%3Cstop%20stop-color%3D%22%23202020%22%20stop-opacity%3D%22.25%22%20offset%3D%221%22%2F%3E%0D%0A%20%20%3C%2FlinearGradient%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3Epng-file%3C%2Ftitle%3E%0D%0A%20%3Cpath%20id%3D%22paper-white%22%20d%3D%22m81.73%2029.79-26.18-29.73h-42.55a13%2013%200%200%200-13%2012.94v84.63a13%2013%200%200%200%2013%2013h55.88a13%2013%200%200%200%2013-13z%22%20fill%3D%22%23fff%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22paper-shadow%22%20d%3D%22m81.73%2029.79-26.18-29.73h-42.55a13%2013%200%200%200-13%2012.94v84.63a13%2013%200%200%200%2013%2013h55.88a13%2013%200%200%200%2013-13z%22%20fill%3D%22url%28%23paper-shadow-gradient%29%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22corner-white%22%20d%3D%22m55.58%200%200.6%2022.13a6.09%206.09%200%200%200%206.09%206.08l19.56%201.62z%22%20fill%3D%22%23fff%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22corner-shadow%22%20d%3D%22m55.58%200%200.6%2022.13a6.09%206.09%200%200%200%206.09%206.08l19.56%201.62z%22%20fill%3D%22url%28%23corner-shadow-gradient%29%22%2F%3E%0D%0A%20%3Cpath%20id%3D%22icon%22%20d%3D%22m66.5%2055.49a0.28%200.28%200%200%200%200-0.13%200.21%200.21%200%200%200%200-0.06%200.65%200.65%200%200%200-0.19-0.18l-25.59-14.77a0.58%200.58%200%200%200-0.57%200l-17%209.82a0.35%200.35%200%200%200-0.21%200.12l-6.15%203.56a0.65%200.65%200%200%200-0.16%200.13v5.16a0.56%200.56%200%200%200%200.29%200.49l25.5%2014.73a0.58%200.58%200%200%200%200.28%200.07%200.59%200.59%200%200%200%200.29-0.07l23.23-13.36a0.56%200.56%200%200%200%200.29-0.49v-4.95a0.17%200.17%200%200%200-0.01-0.07zm-26.06-14%2024.37%2014.07-9.39%205.44-6.55%203.79-3.87-2.25a9.58%209.58%200%200%200%203.13-1.08%203.88%203.88%200%200%200%202.28-3.22%203.89%203.89%200%200%200-2.32-3.24%209.54%209.54%200%200%200-3-1.05l2.12-4.56a0.33%200.33%200%200%200%200-0.33%200.33%200.33%200%200%200-0.31-0.06l-15.46%202.35a0.32%200.32%200%200%200-0.27%200.26%200.32%200.32%200%200%200%200.15%200.34l5.81%203.36a4.2%204.2%200%200%200-1.6%201.85l-11.18-6.38zm-4.44%2016.66%206.89%203.93a10.05%2010.05%200%200%201-4.94-1.18%203.27%203.27%200%200%201-1.95-2.66zm0.14-0.67a3.72%203.72%200%200%201%201.66-1.81l4.89%202.82a0.29%200.29%200%200%200%200.16%200h0.1a0.33%200.33%200%200%200%200.19-0.18l1.75-3.77a9.17%209.17%200%200%201%202.92%201%203.28%203.28%200%200%201%201.95%202.66%203.27%203.27%200%200%201-1.95%202.66%209.42%209.42%200%200%201-3.76%201.14zm8.08-3-1.52%203.27-4.23-2.44-0.67-0.39-5.32-3.07%2014-2.16-1.94%204.18zm-20.52-3.32%2011.65%206.64a2.18%202.18%200%200%200%200%200.44%203.88%203.88%200%200%200%202.27%203.22%2010.74%2010.74%200%200%200%205.26%201.26h1l4.33%202.47-5.65%203.21-11.23-6.48-13.14-7.58zm-6.07%204.16%2024.37%2014.07v3.61l-24.37-14.09zm25.5%2016.47v-2.4l5.51-3.18v3.61l-5.51%203.18zm22.24-11.65-16.11%209.3v-3.61l16.08-9.29z%22%20fill%3D%22%23202020%22%2F%3E%0D%0A%20%3Ctext%20id%3D%22label%22%20transform%3D%22rotate%28-.12%29%22%20x%3D%2212.07291%22%20y%3D%2298.885506%22%20fill%3D%22%23202020%22%20font-family%3D%22sans-serif%22%20font-size%3D%2212.27px%22%20font-weight%3D%22700%22%3E.png%3C%2Ftext%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="PNG icon" decode="async" loading="lazy" class="file_card"></div><span>DRAG IMAGES HERE TO BEGIN</span></div></div></div></div>
+</div>
+<div class="row">
+<div class="col-lg-12 upload_options">
+<span class="upload_option"><span class="upload_options_spacer_text hidden-xs">or you can</span><button style="margin-right: 16px;" class="FileInput-click_to_upload app_starter bttn bttn_dark"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/upload_7f781aaee2d6c1cf29db87d76d056860.svg" importance="low" alt="upload icon" style="height: 18px;" decode="async" loading="lazy" class="bttn_icon_left"><div>PICK IMAGES TO SPY</div></button></span><span class="upload_option hidden-xs"><span class="upload_options_spacer_text">or press</span><div class="paste_buttons"><span class="border_key ctl_key">&nbsp;CTRL&nbsp;</span><span class="border_key_plus">+</span><span class="border_key v_key">&nbsp;V&nbsp;</span><div class="paste_finish"><span class="upload_options_spacer_text pasted_text">pasted</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" font-weight="normal" width="52px" xmlns:xlink="http://www.w3.org/1999/xlink" font-size="13" font-family="sans-serif" font-style="normal" class="checkmark" version="1.1" height="52px"><path d="M14.1,27.2L21.2,34.4L37.9,17.6" fill="none" class="checkmark_check" /></svg></div></div></span>
+</div>
+</div>
+</div>
+<div style="height: 0; width: 0; overflow: hidden;">
+<label style="position: absolute; left: 0; top: 0; z-index: -10000;">
+<span style="color: transparent;">File Picker</span>
+<input multiple="multiple" style="display: none;" id="FileInput-Field" type="file" accept="image/*">
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display: none;">
+<ol vocab="http://schema.org/" typeof="BreadcrumbList">
+<li property="itemListElement" typeof="ListItem">
+<a property="item" href="/" typeof="WebPage">
+<span property="name">PixSpy.com</span>
+</a>
+<meta property="position" content="1">
+</li>
+</ol>
+</div>
+<div id="ScrollTarget"></div>
+<div style="display: none;" class="Totals-outer_container dark_panel">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="Totals-title_and_download_container">
+<div class="count_and_title_container">
+<span class="big_count Totals-image_count">0</span><span class="shaded_title">IMAGES</span>
+</div>
+<div class="Totals-download_all">
+<button class="bttn bttn_white Totals-save_all_btn">
+<span class="bttn_icon_left"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/download-all-dark_046878e99d0a1ed0bcf220ef07e2571d.svg" importance="low" style="width: 23px; height: 18px;" decode="async" loading="lazy" class="Totals-save_all_icon"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/loader-dark_b09615385b5977dac4aeacaea98378e2.gif" importance="low" width="18" style="display: none;" decode="async" loading="lazy" class="Totals-save_all_spinner" height="18"></span><div>DOWNLOAD ALL IMAGES</div>
+</button>
+</div>
+<div class="Totals-progress"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 ImageList-containing_col">
+<div class="ImageList-outer_container">
+</div>
+</div>
+</div>
+</div>
+<div id="Faq-Anchor"></div>
+<div style="margin-bottom: 100px;" class="faint_panel">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<h2 class="c">What can it do?</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 Faq-col">
+
+<div class="Faq-item">
+<h3>Inspect</h3>
+<p>
+Pan and zoom to view the details of your image. The mouse cursor includes highly visible crosshairs that bracket the pixel under the cursor, as well as that pixel's row and column. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Measure</h3>
+<p>
+Right-click-and-drag to create a sticky selection with offset and size information. Hold down Shift while drawing the selection to snap the selection to horizontal, vertical, or square. Edit the selection with the right mouse button or with Ctrl + left mouse button if you only have one. 
+</p>
+<p>
+Press Ctrl+A (or Command+A on Mac) to select the entire image. 
+</p>
+<p>
+The number of pixels in the selection, along with the chromatic mean, median, and mode are listed. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Eye-Drop / Probe Log</h3>
+<p>
+Every click on the image logs the color, pixel position, and the properties of any current selection. You can format these log entries in a number of useful ways and copy them individually or in a list. 
+</p>
+<p>
+Custom formatters can use any combination of the following properties: 
+<ul>
+<li>Pixel color (RGBA, HSV, HSL, and grayscale)</li><li>Click position (floating point and integer)</li><li>Image width and height</li><li>Selection bounds and size</li><li>Mean and median RGBA values of the selection</li><li>The start and end points (floating point and integer) of the selection profile line</li>
+</ul>
+All quantities can be formatted as integer, decimal (floating point), or hexadecimal. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Color Distance</h3>
+<p>
+The color distance (in the 0-255 space) between consecutive entries in the click log is shown between the entries on the left. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Generate palettes from images</h3>
+<p>
+The click log can easily be used to generate a palette from an image. Just click on colors you like, delete any log entries you don't want, and copy the result to the clipboard in your chosen format. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Extract Colors</h3>
+<p>
+Paste a body of text or HTML into the Click Log and it will automatically extract all the colors present in the text. Then use the Click Log's copy feature to get back a clean list of those colors, formatted per your custom formatter
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Crop</h3>
+<p>
+Crop the image to your selection. Just select an area and hit Enter. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Redact</h3>
+<p>
+Delete the contents of your selection. Just select an area and hit the Delete key. Useful if you want to share a screen shot, but avoid sharing sensitive information. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Download / Save</h3>
+<p>
+After cropping or redacting, you can download the resulting image to your computer. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Copy / Paste</h3>
+<p>
+Copy the current selection (or the entire image if there is no selection) using the standard keyboard shortcut (Ctrl+C or Command+C). Images on the clipboard may be pasted using the standard key binding (Ctrl+V or Command+V). 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Profile</h3>
+<p>
+When you make a selection, there's a red dashed trace line shown in the selection. The pixel values and RGB channels along that line are shown in a separate profile display that allows you to see precisely how they vary. The length of the red dashed line is shown in pixels, allowing you to make precise measurements between features in the image. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Selection histogram</h3>
+<p>
+When you make a selection, there's an RGB histogram shown of those specific pixels. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Principal Components Analysis (PCA)</h3>
+<p>
+When you make a selection, the PCA chart shows how the colors in the selection are distributed in color space. The standard deviations of the pixel colors within the selection in each of their principal directions are listed in the σ vector above the PCA chart. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Multi-Image</h3>
+<p>
+Load up any number of images and flip between them. Each image maintains its own view and selection state. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Image Diffing</h3>
+<p>
+When you load up multiple images with the same dimensions, the view state is preserved when flipping between them. This allows you to detect subtle differences between them, which is especially useful when zoomed in. Press the Page Up and Page Down keys to quickly toggle between consecutive images. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Background Contrast</h3>
+<p>
+Press 'B' to toggle the viewer's background color between transparent, white, gray, black, and grayish blue. This is useful for viewing partially transparent images in different contexts. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Sample Selection</h3>
+<p>
+Press 'S' to add up to 200 of the distinct colors in the selection to the click log. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Ignore Alpha Mode</h3>
+<p>
+Press 'A' to toggle Ignore Alpha Mode. When enabled, the alpha channel is ignored, treating all pixels as fully opaque, revealing what color underlies fully or partially transparent pixels. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>JPEG Mode</h3>
+<p>
+Press 'J' to toggle JPEG Mode. JPEG mode helps you understand the noise and distortions caused by JPEG compression of logos or other 2D graphics with flat colors. The 8x8 or 16x16 JPEG grid is shown with red lines, and cells with all a single color are shaded with a semi-transparent red color. The mosquito noise, overshoot, and other JPEG artifacts can be seen in un-shaded cells. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Compress or Fix Noise</h3>
+<p>
+Click the ellipsis menu on each image record to access options to send your image to our companion services, <a href="https://recompressor.com">Recompressor.com</a> and <a href="https://pixfix.com">PixFix.com</a>. 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-bottom: 100px;" class="clear_panel">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<h2 class="c">About Pix Spy</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 Faq-col">
+
+<div class="Faq-item">
+<h3>Is this tool free?</h3>
+<p>
+Absolutely! Pix Spy is completely free to use and there are no ads. We created the site to scratch our own itch and to help you in your pursuit of the perfect image. 
+</p>
+</div>
+
+<div class="Faq-item">
+<h3>Are my images safe?</h3>
+<p>
+Definitely! All processing is done in JavaScript in your browser so your images never leave your computer. 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div style="display: none;" class="Viewer-backdrop">
+<div style="opacity: 0;" class="Viewer-container">
+<div style="left: 300px;" id="Viewer-CanvasContainer" class="canvas_container">
+</div>
+<div class="Viewer-toolbar_container"><div class="Viewer-toolbar"><div class="Viewer-toolbar_white"><div class="Viewer-button_group hidden-xs"><button title="Zoom in" class="Viewer-zoom_in_button Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2016.69%2016.98%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linejoin%3Around%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m10.93%2011.23%205.4%205.4%22%2F%3E%0D%0A%20%3Ccircle%20class%3D%22cls-1%22%20cx%3D%226.67%22%20cy%3D%226.67%22%20r%3D%226.17%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m4.03%206.67h5.29m-2.65-2.64v5.29%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Zoom in icon" decode="async" loading="lazy"></button><button title="Zoom out" class="Viewer-zoom_out_button Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2016.69%2016.98%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linejoin%3Around%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Cg%20data-name%3D%22Layer%202%22%3E%0D%0A%20%20%3Cg%20data-name%3D%22Layer%201%22%3E%0D%0A%20%20%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m10.93%2011.23%205.4%205.4%22%2F%3E%0D%0A%20%20%20%3Ccircle%20class%3D%22cls-1%22%20cx%3D%226.67%22%20cy%3D%226.67%22%20r%3D%226.17%22%2F%3E%0D%0A%20%20%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m4.03%206.67h5.29%22%2F%3E%0D%0A%20%20%3C%2Fg%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Zoom out icon" decode="async" loading="lazy"></button><button title="Zoom to fit" class="Viewer-zoom_to_fit_button Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2018.75%2015.01%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linejoin%3Around%3B%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3Efit-to-screen%3C%2Ftitle%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m0.5%205.17v-3.69a1%201%200%200%201%201.1-0.98h4.51%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m12.64%200.5h4.51a1%201%200%200%201%201.1%201v3.67%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m18.25%209.84v3.69a1%201%200%200%201-1.1%201h-4.51%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m3.4%2014.51h-2.33a0.53%200.53%200%200%201-0.57-0.51v-5.77a0.53%200.53%200%200%201%200.57-0.48h8a0.52%200.52%200%200%201%200.57%200.48v5.77a0.52%200.52%200%200%201-0.57%200.47h-5.67z%22%2F%3E%0D%0A%20%3Cline%20class%3D%22cls-1%22%20x1%3D%2215.11%22%20x2%3D%2212.08%22%20y1%3D%228.05%22%20y2%3D%228.06%22%2F%3E%0D%0A%20%3Cpolyline%20class%3D%22cls-1%22%20points%3D%2213.45%205.95%2015.71%208.02%2013.64%2010.28%22%2F%3E%0D%0A%20%3Cline%20class%3D%22cls-1%22%20x1%3D%229.4%22%20x2%3D%229.41%22%20y1%3D%222.84%22%20y2%3D%225.87%22%2F%3E%0D%0A%20%3Cpolyline%20class%3D%22cls-1%22%20points%3D%227.29%204.5%209.36%202.24%2011.62%204.3%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Zoom to fit icon" decode="async" loading="lazy"></button><button title="Zoom 1:1" class="Viewer-zoom_1_to_1_button Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2018.75%2015.01%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E%0D%0A%20%20.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linejoin%3Around%3B%7D%0D%0A%20%20.cls-2%7Bfont-size%3A6.54px%3Bfill%3A%23202020%3Bfont-family%3Asans-serif%3Bfont-weight%3A700%3Bletter-spacing%3A0.08em%3B%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3E1-1-ratio%3C%2Ftitle%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m0.5%205.17v-3.69a1%201%200%200%201%201.1-0.98h4.51%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m12.64%200.5h4.51a1%201%200%200%201%201.1%201v3.67%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m18.25%209.84v3.69a1%201%200%200%201-1.1%201h-4.51%22%2F%3E%0D%0A%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m6.11%2014.51h-4.51a1%201%200%200%201-1.1-1v-3.67%22%2F%3E%0D%0A%20%3Ctext%20class%3D%22cls-2%22%20x%3D%224%22%20y%3D%229.9200001%22%3E1%3A1%3C%2Ftext%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Zoom 1:1 icon" decode="async" loading="lazy"></button></div><div id="Viewer-ImageControlGroup" class="Viewer-button_group"><button id="Viewer-PrevImage" title="Previous image file" class="Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%206.73%2011.46%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bstroke-width%3A2px%3B%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3Eblue-left-arrow%3C%2Ftitle%3E%0D%0A%20%3Cpolyline%20class%3D%22cls-1%22%20points%3D%225.73%2010.46%201%205.73%205.73%201%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Left arrow icon" decode="async" loading="lazy" height="16"></button><span id="Viewer-ImageName" class="hidden-xs">filename.png</span><button id="Viewer-NextImage" title="Next image file" class="Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%206.73%2011.46%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Cdefs%3E%0D%0A%20%20%3Cstyle%3E.cls-1%7Bfill%3Anone%3Bstroke%3A%23202020%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bstroke-width%3A2px%3B%7D%3C%2Fstyle%3E%0D%0A%20%3C%2Fdefs%3E%0D%0A%20%3Ctitle%3Eblue-right-arrow%3C%2Ftitle%3E%0D%0A%20%3Cpolyline%20class%3D%22cls-1%22%20points%3D%221%201%205.73%205.73%201%2010.46%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Right arrow icon" decode="async" loading="lazy" height="16"></button></div><div class="Viewer-button_group dropdown"><button data-toggle="dropdown" title="More actions" class="Viewer-clear_button Viewer-button_base"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2030.97%205.64%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23202020%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Eellipsis%3C%2Ftitle%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M0%2C2.81A2.69%2C2.69%2C0%2C0%2C1%2C.8.73%2C3.29%2C3.29%2C0%2C0%2C1%2C3.12%2C0%2C3.12%2C3.12%2C0%2C0%2C1%2C5.35.73a2.75%2C2.75%2C0%2C0%2C1%2C.77%2C2.08%2C2.71%2C2.71%2C0%2C0%2C1-.8%2C2.08%2C3.07%2C3.07%2C0%2C0%2C1-2.2.75A3.27%2C3.27%2C0%2C0%2C1%2C.83%2C4.89%2C2.67%2C2.67%2C0%2C0%2C1%2C0%2C2.81Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M12.42%2C2.81a2.69%2C2.69%2C0%2C0%2C1%2C.8-2.08A3.31%2C3.31%2C0%2C0%2C1%2C15.54%2C0a3.12%2C3.12%2C0%2C0%2C1%2C2.23.73%2C2.71%2C2.71%2C0%2C0%2C1%2C.77%2C2.08%2C2.74%2C2.74%2C0%2C0%2C1-.79%2C2.08%2C3.11%2C3.11%2C0%2C0%2C1-2.21.75%2C3.29%2C3.29%2C0%2C0%2C1-2.29-.75A2.67%2C2.67%2C0%2C0%2C1%2C12.42%2C2.81Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M24.84%2C2.81a2.69%2C2.69%2C0%2C0%2C1%2C.8-2.08A3.31%2C3.31%2C0%2C0%2C1%2C28%2C0a3.12%2C3.12%2C0%2C0%2C1%2C2.23.73A2.71%2C2.71%2C0%2C0%2C1%2C31%2C2.81a2.75%2C2.75%2C0%2C0%2C1-.8%2C2.08A3.1%2C3.1%2C0%2C0%2C1%2C28%2C5.64a3.29%2C3.29%2C0%2C0%2C1-2.29-.75A2.67%2C2.67%2C0%2C0%2C1%2C24.84%2C2.81Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" importance="low" decode="async" loading="lazy" height="8"></button><div class="dropdown-menu modern_menu"><li><a href="https://clippingmagic.com" class="ImageList-send_to_cm_btn"><img src="data:image/svg+xml,%3Csvg%0D%0A%20%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0D%0A%20%20%20version%3D%221.1%22%0D%0A%20%20%20viewBox%3D%220%200%2026%2026%22%3E%0D%0A%20%20%3Crect%20y%3D%220%22%20x%3D%220%22%20height%3D%2226%22%20width%3D%2226%22%20style%3D%22fill%3A%233058a1%22%20%2F%3E%0D%0A%20%20%3Cg%20style%3D%22fill%3A%23ffffff%22%3E%0D%0A%20%20%20%20%3Crect%20y%3D%222%22%20x%3D%2213%22%20height%3D%2211%22%20width%3D%2211%22%20%2F%3E%0D%0A%20%20%20%20%3Crect%20y%3D%2213%22%20x%3D%222%22%20height%3D%2211%22%20width%3D%2211%22%20%2F%3E%0D%0A%20%20%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Remove the background on ClippingMagic.com</a></li><li><a href="https://pixian.ai" class="ImageList-send_to_pixian_btn"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%0D%0A%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%234E3764%3B%7D.cls-2%2C.cls-3%7Bfill%3A%23fff%3B%7D.cls-2%7Bopacity%3A0.51%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%0D%0A%3Ctitle%3Epixian%20logo%3C%2Ftitle%3E%0D%0A%3Crect%20class%3D%22cls-1%22%20width%3D%2216%22%20height%3D%2216%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%0D%0A%3Cg%20class%3D%22cls-2%22%3E%0D%0A%09%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%09%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%09%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20class%3D%22cls-3%22%20transform%3D%22translate%2811.5%2011.5%29%20rotate%2845%29%22%3E%0D%0A%09%3Crect%20x%3D%22-0.5%22%20y%3D%22-3.25%22%20width%3D%221%22%20height%3D%226.5%22%20rx%3D%22.5%22%20ry%3D%22.5%22%2F%3E%0D%0A%09%3Crect%20x%3D%22-3.25%22%20y%3D%22-0.5%22%20width%3D%226.5%22%20height%3D%221%22%20rx%3D%22.5%22%20ry%3D%22.5%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Remove the background on Pixian.AI</a></li><li><a href="https://pixian.ai/face-stickers" class="ImageList-send_to_pixian_facesticker_btn"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%0D%0A%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%234E3764%3B%7D.cls-2%2C.cls-3%7Bfill%3A%23fff%3B%7D.cls-2%7Bopacity%3A0.51%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%0D%0A%3Ctitle%3Epixian%20logo%3C%2Ftitle%3E%0D%0A%3Crect%20class%3D%22cls-1%22%20width%3D%2216%22%20height%3D%2216%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%0D%0A%3Cg%20class%3D%22cls-2%22%3E%0D%0A%09%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%09%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%09%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%225%22%20height%3D%225%22%20rx%3D%221%22%20ry%3D%221%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20class%3D%22cls-3%22%20transform%3D%22translate%2811.5%2011.5%29%20rotate%2845%29%22%3E%0D%0A%09%3Crect%20x%3D%22-0.5%22%20y%3D%22-3.25%22%20width%3D%221%22%20height%3D%226.5%22%20rx%3D%22.5%22%20ry%3D%22.5%22%2F%3E%0D%0A%09%3Crect%20x%3D%22-3.25%22%20y%3D%22-0.5%22%20width%3D%226.5%22%20height%3D%221%22%20rx%3D%22.5%22%20ry%3D%22.5%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Create face sticker on Pixian.AI</a></li><li><a href="https://vectorizer.ai" class="ImageList-send_to_vectorizer_btn"><img src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2250%22%20ry%3D%2250%22%20fill%3D%22%233659ff%22%2F%3E%0D%0A%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M322.5%2089h2.5c9%200%2017.5%201.9%2025.2%205.6%205.2%202.9%209.6%206.5%2013.3%2010.8%206.1%207.5%2010.5%2016.4%2013%2026.7%202.3%209%203.4%2019%203.5%2029.5.1%207%200%2013.9-.3%2020.6%200%20.2.4%200%201.3-.4%205.2-2.6%2010.2-5.5%2015-8.7%204.6-2%209-2%2012.7-.2%202%20.8%203%203%203%207%200%205-.9%209.4-2.6%2013.5-2.4%206-6.3%2011.5-11.8%2016.3-5%204.4-11%207.9-17.8%2010.5-.8.3-1.3.8-1.3%201.4l-2.4%2024.6c-2%2018.4-5%2036-9.3%2053-4.7%2016-10.5%2031.3-17.4%2046-6.3%2013.6-14.5%2026-24.8%2037-8.6%209-18%2016.5-28.4%2022.4-12.6%207.2-26.2%2012.2-40.7%2015-14.4%203-29.3%204-44.5%203.3-15.2-.6-29.3-4.3-42.4-11-7-4-13.2-8.8-18.3-14.5-7.9-9.7-12.8-21-14.9-33.6-1-5.6-1.6-11-1.7-16-.5-5-.2-10.4%201-16%202.8-14.6%206.3-29.5%2010.4-44.8l15.3-61c2.3-9.7%204.3-18.6%205.8-27%202.6-13%203.4-25.4%202.3-37-.4-7.3-2.5-13.8-6.3-19.4-2.9-3.2-6.3-5-10.2-5-4.7-.2-8.8%201-12.5%203.8l-18.8%2013.5c-3.6%202.6-7.4%204-11.4%204.3-2.9.2-5-.4-6.4-1.8-1.3-1.3-2-3.4-2.2-6.3-.7-11.8%202.4-22.2%209.3-31.2%204-5%209-9.5%2015.1-13.4%208.2-5.6%2017.2-9.6%2027.1-12%208.3-2%2017.3-2.6%2027-2.2%209.7.7%2018.3%203.6%2026%208.8%205.4%204%2010%209%2013.5%2014.8%208.7%2013.6%2012.6%2028.9%2011.8%2045.7-.3%2016.2-2.5%2032-6.5%2047.8l-15.2%2065c-2.9%2012.7-5.2%2024.8-7%2036.2-1.4%2011-1.6%2022-.8%2033.3.8%207%204.1%2012.7%209.8%2017.2%203.2%202.4%207%204%2011.2%205%203.8.8%208%201.3%2012.8%201.4%2015-.2%2028.5-4.6%2040.7-13.2%206-4.2%2011.6-9%2016.8-14.4%208-8.6%2014.5-18%2020-28.4%208.6-17%2015-35%2019-53.6%202.2-9.4%204.1-19.8%206-31.3-14.6-.7-28-4.4-40.5-11.1-5.2-3.1-10-7-14.5-11.8-5-5.5-9-11.4-11.8-17.8-4.4-10.2-6.8-21-7-32.7-.5-8.8.5-17.2%203-25.2%203.5-10.1%209.5-18.7%2018-26%206.1-5%2013.2-8.5%2021.2-10.6%205.5-1.4%2011.2-2.2%2017-2.3zm5.4%2038.5c-2.6%200-4.6%201-5.9%203.2-.5.8-.8%201.6-1.2%202.5l-.8%202.6-.4%202.8v3c0%202.2.1%204.2.3%206s.5%203.8%201%205.5l.6%203c.3%201%20.5%202%201%203%20.2%201%20.6%201.9%201%202.8l1.2%202.7%201.5%202.6c.5.9%201.1%201.6%201.7%202.4l2%202.3%202.2%202.2c1.4%201.4%203%202.6%204.4%203.7s3%202%204.6%202.9c.4-8.4.7-16.8.8-25.2v-5c0-1.6-.3-3.2-.5-4.7l-.7-4.5-1-4.3c-.2-.8-.5-1.6-1-2.4l-1.6-2.7c-1.4-2.1-3.3-3.5-5.5-4.2l-2.4-.4H328z%22%2F%3E%0D%0A%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Trace to SVG on Vectorizer.AI</a></li><li><a href="https://vectormagic.com" class="ImageList-send_to_vm_btn"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20124.38%20124.38%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23eab819%3B%7D.cls-1%2C.cls-4%2C.cls-5%7Bstroke%3A%23718fa4%3B%7D.cls-1%2C.cls-2%2C.cls-3%2C.cls-4%2C.cls-5%7Bstroke-linecap%3Around%3Bstroke-width%3A11.66px%3B%7D.cls-2%2C.cls-5%7Bfill%3Anone%3B%7D.cls-2%2C.cls-3%7Bstroke%3A%23fff%3B%7D.cls-3%2C.cls-4%7Bfill%3A%23fff%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Evector-magic%3C%2Ftitle%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Crect%20class%3D%22cls-1%22%20x%3D%225.83%22%20y%3D%225.83%22%20width%3D%22112.72%22%20height%3D%22112.72%22%20rx%3D%226.42%22%20ry%3D%226.42%22%2F%3E%3Ccircle%20class%3D%22cls-2%22%20cx%3D%2262.19%22%20cy%3D%2262.19%22%20r%3D%2234.98%22%2F%3E%3Ccircle%20class%3D%22cls-3%22%20cx%3D%2262.19%22%20cy%3D%2262.19%22%20r%3D%2211.66%22%2F%3E%3Crect%20class%3D%22cls-4%22%20x%3D%2262.19%22%20y%3D%2262.19%22%20width%3D%2256.36%22%20height%3D%2256.36%22%20rx%3D%226.42%22%20ry%3D%226.42%22%2F%3E%3Cline%20class%3D%22cls-5%22%20x1%3D%2262.19%22%20y1%3D%22118.55%22%20x2%3D%22118.55%22%20y2%3D%2262.19%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Trace to SVG on VectorMagic.com</a></li><li><a href="https://pixfix.com" class="ImageList-send_to_pix_fix_btn"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20119.34%20119.34%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%2334495e%3B%7D.cls-2%7Bfill%3A%239ba6b0%3B%7D.cls-3%7Bfill%3A%23fff%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Epixfix-large%3C%2Ftitle%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M115.08%2C119.34H4.26A4.26%2C4.26%2C0%2C0%2C1%2C0%2C115.08V4.26A4.26%2C4.26%2C0%2C0%2C1%2C4.26%2C0H115.08a4.26%2C4.26%2C0%2C0%2C1%2C4.26%2C4.26V115.08a4.26%2C4.26%2C0%2C0%2C1-4.26%2C4.26%22%2F%3E%3Cpolyline%20class%3D%22cls-2%22%20points%3D%2252.21%2067.13%2014.92%2067.13%2014.92%20104.42%2052.21%20104.42%2052.21%2067.13%22%2F%3E%3Cpolyline%20class%3D%22cls-2%22%20points%3D%22104.42%2014.92%2067.13%2014.92%2067.13%2052.21%20104.42%2052.21%20104.42%2014.92%22%2F%3E%3Cpolyline%20class%3D%22cls-2%22%20points%3D%2252.21%2014.92%2014.92%2014.92%2014.92%2052.21%2052.21%2052.21%2052.21%2014.92%22%2F%3E%3Cpolygon%20class%3D%22cls-3%22%20points%3D%22104.42%2082.05%2089.5%2082.05%2089.5%2067.13%2082.05%2067.13%2082.05%2082.05%2067.13%2082.05%2067.13%2089.5%2082.05%2089.5%2082.05%20104.42%2089.5%20104.42%2089.5%2089.5%20104.42%2089.5%20104.42%2082.05%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Clean up on PixFix.com</a></li><li><a href="https://recompressor.com" class="ImageList-send_to_recompressor_btn"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20119.91%20119.91%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Ablue%3B%7D.cls-2%7Bfill%3A%237d7dff%3B%7D.cls-3%7Bfill%3A%23fff%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Eweb-optimize-large%3C%2Ftitle%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M8.56%2C0H111.34a8.57%2C8.57%2C0%2C0%2C1%2C8.57%2C8.56V111.34a8.57%2C8.57%2C0%2C0%2C1-8.57%2C8.57H8.56A8.57%2C8.57%2C0%2C0%2C1%2C0%2C111.34V8.56A8.56%2C8.56%2C0%2C0%2C1%2C8.56%2C0%22%2F%3E%3Cpolyline%20class%3D%22cls-2%22%20points%3D%2293.59%2019.21%2020.6%2019.21%2020.6%2092.2%2047.15%2092.2%2047.15%2075.92%2036.87%2075.92%2036.87%2035.48%2077.32%2035.48%2077.32%2047.99%2093.59%2047.99%2093.59%2019.21%22%2F%3E%3Cpath%20class%3D%22cls-3%22%20d%3D%22M101.66%2C59.05H58v43.64h43.65ZM70.82%2C71.85h18v18h-18v-18Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" importance="low" width="20" style="margin-right: 5px;" decode="async" loading="lazy" height="20">Optimize on Recompressor.com</a></li></div></div><button id="Viewer-DownloadCurrent" class="Viewer-blue_button Viewer-button_base"><span style="position: relative;" class="bttn_icon_left"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/download_7bb9d59a202d3c2cc0b8dd2792dc7314.svg" importance="low" alt="Download icon" id="Viewer-DownloadCurrentIcon" decode="async" loading="lazy"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/loader_bb8484527b3e8f2e99577814ba091c9a.gif" importance="low" alt="Loading spinner" style="display: none;" id="Viewer-DownloadCurrentSpinner" decode="async" loading="lazy"></span><span class="hidden-sm hidden-xs"> &nbsp;DOWNLOAD</span></button></div></div><button title="Close viewer" class="Viewer-cancel_button Viewer-blue_button Viewer-button_base"><img src="https://d3pm6qrawttss1.cloudfront.net/p/assets/images/exit_d39ae977b68c26e38997833cbf3a12af.svg" importance="low" alt="Close icon" decode="async" loading="lazy"></button></div><div id="Sidebar-Container"><div class="FileDetails-title"></div><div class="FileDetails-details"></div><div class="EyeDropper-row"><div class="EyeDropper-Swatch-unit EyeDropper-hover"><div class="EyeDropper-Swatch-title">HOVER</div><div class="EyeDropper-Swatch-checker"><div class="EyeDropper-Swatch-color"></div></div><div class="EyeDropper-Swatch-formatted"></div></div><div class="EyeDropper-Swatch-unit EyeDropper-click"><div class="EyeDropper-Swatch-title">CLICK</div><div class="EyeDropper-Swatch-checker"><div class="EyeDropper-Swatch-color"></div></div><div class="EyeDropper-Swatch-formatted"></div></div></div><div class="Formatter-title">FORMATTER</div><div class="Formatter-container dropdown"><div data-toggle="dropdown" aria-expanded="true" aria-haspopup="true" class="Formatter-row dropdown-toggle"><div class="Formatter-current noselect"></div><div class="Formatter-caret">&#9660;</div></div><ul class="dropdown-menu modern_menu Formatter-menu"></ul></div><div class="Selection-header_row"><span class="Selection-title">SELECTION</span><span id="Selection-DimensionsSummary" class="Selection-summary"></span></div><div style="display: none;" class="Selection-details_container"><table class="table table-condensed table_no_border table_very_condensed table_tight_width"><tbody><tr class="Selection-num_pixels_row"><th class="Selection-details_label">pixels:</th><td></td><td class="Selection-details_value Selection-num_pixels"></td></tr><tr class="Selection-mean_color_row"><th class="Selection-details_label">mean:</th><td class="Selection-color_swatch_td"><div class="Selection-mean_color_swatch Selection-color_swatch"></div></td><td class="Selection-details_value Selection-mean_color"></td></tr><tr class="Selection-median_color_row"><th class="Selection-details_label">median:</th><td class="Selection-color_swatch_td"><div class="Selection-median_color_swatch Selection-color_swatch"></div></td><td class="Selection-details_value Selection-median_color"></td></tr><tr class="Selection-mode_color_row"><th class="Selection-details_label">mode:</th><td class="Selection-color_swatch_td"><div class="Selection-mode_color_swatch Selection-color_swatch"></div></td><td class="Selection-details_value Selection-mode_color"></td></tr></tbody></table></div><div style="display: none;" class="Selection-profile_and_histogram_container"><div class="Selection-pca_container"><div class="Selection-header_row"><span class="Selection-title">PCA</span><span id="Selection-PcaSummary" class="Selection-summary"></span></div></div><div class="Selection-histogram_container"><div class="Selection-header_row"><span class="Selection-title">HISTOGRAM</span><span id="Selection-HistogramSummary" class="Selection-summary"></span></div></div><div class="Selection-profile_container"><div class="Selection-header_row"><span class="Selection-title">PROFILE</span><span id="Selection-ProfileSummary" class="Selection-summary"></span></div></div></div><div class="Log-header_row"><span class="Log-title">CLICK LOG</span><div class="dropdown"><div data-toggle="dropdown" aria-expanded="true" aria-haspopup="true" class="dropdown-toggle"><div class="Log-copy_all noselect">copy <span class="caret"></span></div></div><ul class="dropdown-menu dropdown-menu-right modern_menu"><li><a onclick="return App.copyLog('\n')" href="#">newline-separated</a><a onclick="return App.copyLog(',')" href="#">comma-separated</a><a onclick="return App.copyLog(';')" href="#">semicolon-separated</a><a onclick="return App.copyLog('|')" href="#">pipe-separated</a><a onclick="return App.copyLog('json')" href="#">JSON Array</a></li></ul></div><span class="Log-paste">paste</span><span class="Log-clear_all">clear</span></div><div class="Log-container"></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div role="dialog" aria-labelledby="Formatter-Modal-Title" tabindex="-1" id="Formatter-Modal-Container" class="modal fade">
+<div role="document" class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" data-dismiss="modal" class="close" aria-label="Close">
+<span aria-hidden="true">
+&times;
+</span>
+</button>
+<h4 id="Formatter-Modal-Title" class="modal-title">Add Custom Formatter</h4>
+</div>
+<div class="modal-body">
+<h4 style="margin: 0 0 20px;">$&lt;Code&gt;[Precision][Format][;]</h4><h5 style="margin: 10px 0;">&lt;Code&gt; Mandatory String</h5>
+<ul>
+<li>
+Single Pixel Properties
+<ul>
+<li>
+<span class="inlineCode">r</span>, <span class="inlineCode">g</span>, <span class="inlineCode">b</span>, <span class="inlineCode">a</span>: red, green, blue, and alpha channels
+</li>
+<li>
+<span class="inlineCode">hue</span>, <span class="inlineCode">sat</span>, <span class="inlineCode">val</span>, <span class="inlineCode">lit</span>, <span class="inlineCode">gray</span>: hue, saturation, value, lightness, and grayscale
+</li>
+<li>
+<span class="inlineCode">x</span>, <span class="inlineCode">y</span>: x and y coordinates of the clicked pixel
+</li>
+</ul>
+</li>
+<li>
+Selection Properties
+<ul>
+<li>
+<span class="inlineCode">meanR</span> (and <span class="inlineCode">G</span>, <span class="inlineCode">B</span>, <span class="inlineCode">A</span>): mean color channels of pixels in selection
+</li>
+<li>
+<span class="inlineCode">medianR</span> (and <span class="inlineCode">G</span>, <span class="inlineCode">B</span>, <span class="inlineCode">A</span>): median pixel in selection
+</li>
+<li>
+<span class="inlineCode">modeR</span> (and <span class="inlineCode">G</span>, <span class="inlineCode">B</span>, <span class="inlineCode">A</span>): most common pixel color in selection
+</li>
+<li>
+<span class="inlineCode">left</span>, <span class="inlineCode">top</span>, <span class="inlineCode">right</span>, <span class="inlineCode">bottom</span>: bounds of selection
+</li>
+<li>
+<span class="inlineCode">sw</span>, <span class="inlineCode">sh</span>, <span class="inlineCode">sd</span>: width, height, and diagonal of selection
+</li>
+</ul>
+</li>
+<li>
+Profile (Red Dashed Line) Properties
+<ul>
+<li>
+(<span class="inlineCode">xa</span>, <span class="inlineCode">ya</span>), (<span class="inlineCode">xb</span>, <span class="inlineCode">yb</span>): start (a) and end (b) positions of profile line
+</li>
+</ul>
+</li>
+<li>
+Image Properties
+<ul>
+<li>
+<span class="inlineCode">filename</span>: the image filename
+</li>
+<li>
+<span class="inlineCode">w</span>, <span class="inlineCode">h</span>: width and height of image
+</li>
+</ul>
+</li>
+</ul>
+<h5 style="margin: 10px 0;">[Precision] Optional Number</h5>
+<ul>
+<li>Integers: minimum number of zero-padded digits (default: 0)</li><li>Decimals: number of digits after the decimal point (default: 3)</li><li>Hexadecimal: minimum number of zero-padded digits (default: 2)</li>
+</ul>
+<h5 style="margin: 10px 0;">[Format] Optional String</h5>
+<ul>
+<li>
+<span class="inlineCode">i</span>, <span class="inlineCode">f</span>, <span class="inlineCode">x</span>, <span class="inlineCode">X</span>: Integer, decimal (floating point), hex, and HEX (using capital letters)
+</li>
+</ul>
+<div id="Formatter-Modal-InputRow">
+<input id="Formatter-Modal-Input" type="text">
+<div id="Formatter-Modal-Arrow">
+&rarr;
+</div>
+<div id="Formatter-Modal-Example"></div>
+</div>
+</div>
+<div id="Formatter-Modal-Footer" class="modal-footer">
+<button type="button" data-dismiss="modal" class="bttn bttn_wire">Close</button><button id="Formatter-Modal-Add" type="button" class="bttn bttn_dark">Add</button>
+</div>
+</div>
+</div>
+</div>
+<div class="Footer-language_outer">
+<div class="container">
+<div class="Footer-languages">
+<div style="font-weight: bold; color: #202020;" class="Footer-language_item">English</div><a hreflang="de" rel="alternate" href="https://de.pixspy.com/" class="Footer-language_item">Deutsch (German)</a><a hreflang="es" rel="alternate" href="https://es.pixspy.com/" class="Footer-language_item">Español (Spanish)</a><a hreflang="fr" rel="alternate" href="https://fr.pixspy.com/" class="Footer-language_item">Français (French)</a><a hreflang="hi" rel="alternate" href="https://hi.pixspy.com/" class="Footer-language_item">हिन्दी (Hindi)</a><a hreflang="id" rel="alternate" href="https://id.pixspy.com/" class="Footer-language_item">Indonesia (Indonesian)</a><a hreflang="it" rel="alternate" href="https://it.pixspy.com/" class="Footer-language_item">Italiano (Italian)</a><a hreflang="ja" rel="alternate" href="https://ja.pixspy.com/" class="Footer-language_item">日本語 (Japanese)</a><a hreflang="ko" rel="alternate" href="https://ko.pixspy.com/" class="Footer-language_item">한국어 (Korean)</a><a hreflang="pl" rel="alternate" href="https://pl.pixspy.com/" class="Footer-language_item">Polski (Polish)</a><a hreflang="pt" rel="alternate" href="https://pt.pixspy.com/" class="Footer-language_item">Português (Portuguese)</a><a hreflang="ru" rel="alternate" href="https://ru.pixspy.com/" class="Footer-language_item">Русский (Russian)</a><a hreflang="th" rel="alternate" href="https://th.pixspy.com/" class="Footer-language_item">ไทย (Thai)</a><a hreflang="tr" rel="alternate" href="https://tr.pixspy.com/" class="Footer-language_item">Türkçe (Turkish)</a><a hreflang="vi" rel="alternate" href="https://vi.pixspy.com/" class="Footer-language_item">Tiếng Việt (Vietnamese)</a><a hreflang="zh-Hans" rel="alternate" href="https://zh.pixspy.com/" class="Footer-language_item">简体中文 (Chinese)</a><a hreflang="zh-Hant" rel="alternate" href="https://tw.pixspy.com/" class="Footer-language_item">繁體中文 (Chinese)</a>
+</div>
+</div>
+</div>
+<footer class="Footer-container hidden-print">
+<div class="container">
+<div class="Footer-sitemap row">
+<div class="col-sm-12">
+<ul>
+<li>
+<a href="/">
+<img src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%20%3Ctitle%3Epix-spy-logo%3C%2Ftitle%3E%0D%0A%20%3Crect%20fill%3D%22%23202020%22%20width%3D%2216%22%20height%3D%2216%22%2F%3E%0D%0A%20%3Cg%20fill%3D%22%23fff%22%20fill-opacity%3D%220.7%22%3E%0D%0A%20%20%3Cpolygon%20points%3D%223%203%205%203%205%202%203%202%202%202%202%203%202%205%203%205%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%223%2014%205%2014%205%2013%203%2013%203%2011%202%2011%202%2013%202%2014%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%2213%205%2014%205%2014%203%2014%202%2013%202%2011%202%2011%203%2013%203%22%2F%3E%0D%0A%20%20%3Cpolygon%20points%3D%2214%2014%2014%2013%2014%2011%2013%2011%2013%2013%2011%2013%2011%2014%2013%2014%22%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%20%3Crect%20fill%3D%22%23fff%22%20x%3D%225%22%20y%3D%225%22%20width%3D%223%22%20height%3D%223%22%2F%3E%0D%0A%20%3Crect%20fill%3D%22%23fff%22%20x%3D%228%22%20y%3D%228%22%20width%3D%223%22%20height%3D%223%22%2F%3E%0D%0A%3C%2Fsvg%3E%0D%0A" importance="low" alt="Site Logo" width="68" decode="async" loading="lazy" class="bttn_icon_left" height="68"><span>PIX SPY</span>
+</a>
+</li>
+</ul>
+<ul style="margin-top: 23px;">
+<li>
+<a href="/">HOME</a>
+</li>
+<li>
+<a href="/about">ABOUT</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<ul class="Footer-terms">
+<li>
+&copy; <a href="https://cedarlakeventures.com">CEDAR LAKE VENTURES, INC.</a>
+</li>
+<li>
+<a href="/policies/terms">TERMS</a>
+</li>
+<li>
+<a href="/policies/privacy">PRIVACY</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+</div>
+</div>
+</div>
+</footer>
+</body>
+
+</html>
